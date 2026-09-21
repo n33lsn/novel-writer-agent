@@ -1,6 +1,15 @@
 # Inkstone
 
-Inkstone is an AI-powered novel writing workspace built with Next.js, TypeScript, and React. It combines a manuscript editor with story planning tools and an AI story partner.
+Inkstone is an AI-powered novel writing workspace built with Next.js, TypeScript, and React.
+
+## Included
+
+- Responsive novel dashboard with writing metrics
+- Persistent browser storage for chapters and characters
+- Editable manuscript with chapter management
+- Character library and world bible
+- Markdown export
+- Story Partner API using OpenAI `gpt-4o-mini`
 
 ## Run locally
 
@@ -10,14 +19,6 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open http://localhost:3000. Add an `OPENAI_API_KEY` to `.env.local` to connect the story partner to OpenAI.
+Open http://localhost:3000. Add `OPENAI_API_KEY` to `.env.local` to enable live AI assistance. Without a key, the app still runs and explains how to enable it.
 
-## MVP
-
-- Novel dashboard with writing progress
-- Manuscript workspace and chapter outline
-- Story-partner prompt panel
-- Responsive layout
-- API route ready for AI-assisted brainstorming and revision
-
-Next steps can include persistent storage, authentication, rich text editing, character/world-bible views, streaming responses, and DOCX export.
+Data is currently stored in the browser's local storage. Production next steps are authentication, a database, streaming responses, and DOCX export.
