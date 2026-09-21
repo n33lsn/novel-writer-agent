@@ -1,25 +1,13 @@
 # Inkstone
 
-Inkstone is an AI-powered novel writing workspace built with Next.js, TypeScript, and React.
+## New: memory engine, quality control, and author controls
 
-## Autonomous novelist
+Open `/command` for the command center. It provides:
 
-The `/autopilot` workspace adds a long-form, scene-based pipeline:
+- Scene-to-memory extraction for characters, events, and unresolved threads
+- Relevant-memory retrieval before drafting
+- Quality audits for repetition, cliches, pacing, voice drift, and continuity risks
+- Human approval mode and lockable canonical facts
+- Removable or unlockable memory entries
 
-1. **Architect** creates a causal novel blueprint with character arcs and scene turns.
-2. **Draft a scene** writes one scene using supplied creative memory and a scene plan.
-3. **Critique & revise** diagnoses structure, character, prose, and continuity, then applies a revision pass.
-
-The system is deliberately scene-based: each scene has a goal, conflict, turn, and consequence. This is more reliable for long fiction than asking a model to generate an entire novel in one request.
-
-## Setup
-
-```bash
-npm install
-cp .env.example .env.local
-npm run dev
-```
-
-Add `OPENAI_API_KEY` for AI features. Configure Supabase and run both `supabase/schema.sql` and `supabase/autonomous-novelist.sql` for cloud story memory and scene persistence. The new API is rate-limited and validates context size.
-
-The autonomous pipeline is designed for human approval: it can architect, draft, critique, and revise, but final publication still requires editorial judgment. Long-term quality depends on maintaining the project memory and reviewing each scene.
+Run `supabase/memory-quality.sql` after the existing schemas for durable memory items and quality reports. The current command center provides the review UX; the next integration step is persisting approved items and reports through the authenticated Supabase client and passing locked canon automatically into `/api/novel`.
