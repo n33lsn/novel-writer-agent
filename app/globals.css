@@ -1,12 +1,2 @@
-/* Cloud sync and authenticated workspace additions */
-.nav-link { color:#657069; padding:12px; border-radius:9px; display:flex; align-items:center; gap:12px; font-size:14px; text-decoration:none; }
-.nav-link:hover { background:var(--pale); color:var(--green); font-weight:600; }
-.user-email { color:var(--muted); font-size:11px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding:0 12px 10px; }
-.cloud-status { color:var(--muted); font-size:11px; display:inline-flex; align-items:center; gap:5px; white-space:nowrap; }
-.auth-page { min-height:100vh; display:grid; place-items:center; background:var(--paper); padding:24px; }
-.auth-card { width:min(440px,100%); background:#fff; border:1px solid var(--line); border-radius:16px; padding:34px; box-shadow:0 12px 35px rgba(29,55,38,.07); }
-.auth-brand { display:flex; align-items:center; gap:10px; color:var(--ink); text-decoration:none; font:700 25px 'Playfair Display',serif; margin-bottom:42px; }
-.auth-card h1 { font-size:34px; } .auth-card form { display:grid; gap:16px; margin-top:26px; } .auth-card label, .studio-form label { display:grid; gap:7px; color:#536158; font-size:13px; font-weight:600; }
-.auth-card input, .studio-form input, .studio-form select, .studio-form textarea { width:100%; border:1px solid var(--line); border-radius:8px; padding:11px; background:#fff; color:var(--ink); outline:none; } .auth-card input:focus, .studio-form input:focus, .studio-form textarea:focus { border-color:var(--green); box-shadow:0 0 0 3px #eaf3ed; }
-.auth-submit { width:100%; margin-top:5px; } .auth-message { margin-top:16px; border-radius:8px; padding:11px; color:var(--green); background:var(--pale); font-size:13px; } .auth-switch { border:0; background:none; color:var(--green); font-weight:600; margin-top:20px; padding:0; font-size:13px; }
-@media(max-width:700px){ .cloud-status { display:none; } .auth-card { padding:25px; } }
+/* Multi-project workspace additions */
+.project-actions { display:flex; gap:12px; position:absolute; bottom:17px; right:18px; opacity:0; transition:opacity .15s; }.project:hover .project-actions { opacity:1; }.project-actions button { border:0; background:transparent; color:var(--muted); font-size:11px; display:flex; gap:4px; align-items:center; }.project-actions button:hover { color:var(--green); }.rename-row { display:flex; gap:4px; margin:14px 0 8px; }.rename-row input { min-width:0; width:100%; border:1px solid var(--line); border-radius:5px; padding:5px; }.rename-row button { border:0; background:var(--pale); color:var(--green); border-radius:5px; }.user-email { display:block; padding:0 12px 8px; color:var(--muted); font-size:11px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }.link-btn { display:inline-flex; align-items:center; gap:6px; }.cloud-status { display:inline-flex; align-items:center; gap:5px; color:var(--muted); font-size:11px; white-space:nowrap; }
